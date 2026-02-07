@@ -1,15 +1,16 @@
 #!/bin/bash
 
-# Get the directory where this script is located
+# Directory where the script is stored
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
-# Generate timestamp: YYYYMMDDHHMMSS
-TIMESTAMP="$(date +%Y%m%d%H%M%S)"
+# Timestamp: YYYYMMDDHHMMSSmmm (mmm = milliseconds)
+TIMESTAMP="$(date +%Y%m%d%H%M%S%3N)"
 
-# Build log file path
+# Log file path
 LOG_FILE="${SCRIPT_DIR}/${TIMESTAMP}.log"
 
-# Create the log file
+# Create the file
 touch "$LOG_FILE"
 
 echo "Log file created: $LOG_FILE"
+# this is test for the git diff
